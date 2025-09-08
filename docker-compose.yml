@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # Flask Application
+  flask-app:
+    build: .
+    ports:
+      - "5001:5001"  # Map host port 5001 to container port 5001
+    environment:
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./app_flask:/app/app_flask  # For development: hot reload
+      - ./models:/app/models
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Streamlit Application (optional)
+  streamlit-app:
+    build: .
+    ports:
+      - "8501:8501"  # Streamlit default port
+    command: streamlit run app_streamlit/app.py --server.port=8501 --server.address=0.0.0.0
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./app_streamlit:/app/app_streamlit  # For development
+    depends_on:
+      - flask-app
+    restart: unless-stopped
+
+  # Add other services as needed (Redis, PostgreSQL, etc.)
+  # redis:
+  #   image: redis:alpine
+  #   ports:
+  #     - "6379:6379"
+  #   restart: unless-stopped

@@ -1,0 +1,48 @@
+# Git
+.git
+.gitignore
+
+# Data files (too large for Docker images)
+*.csv
+*.h5
+*.hdf5
+
+# Model files
+*.pkl
+*.joblib
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+.env.*
+
+# Docker ignore itself (optional)
+.dockerignore
+
+# Large directories not needed for runtime
+docs/
+tests/

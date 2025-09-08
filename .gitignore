@@ -1,0 +1,82 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Environment variables
+.env
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Data files (large datasets)
+data/raw/
+data/processed/
+*.csv
+*.h5
+*.hdf5
+*.feather
+*.parquet
+
+# Model files (large binary files)
+models/
+*.pkl
+*.joblib
+*.model
+*.pth
+
+# Logs and outputs
+logs/
+*.log
+output/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# PyInstaller
+build/
+dist/
+
+# Database
+*.db
+*.sqlite3
+
+# Docker
+docker-compose.override.yml
+
+# Temporary files
+temp/
+tmp/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store

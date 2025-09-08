@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result">
+            <h2>{{ result.message }}</h2>
+            <p>Prediction: 
+                <span class="{{ 'diabetes' if result.prediction == 1 else 'no-diabetes' }}">
+                    {{ 'Positive' if result.prediction == 1 else 'Negative' }}
+                </span>
+            </p>
+            <p>Probability: {{ "%.2f"|format(result.probability * 100) }}%</p>
+            <p><a href="/">Make another prediction</a></p>
+        </div>
+    </div>
+</body>
+</html>
